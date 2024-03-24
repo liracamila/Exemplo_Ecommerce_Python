@@ -1,6 +1,6 @@
 ## Exemplo de E-commerce em Python 
 
-# Exercicio para o curso de Lógica de Programação
+### Exercicio para o curso de Lógica de Programação
 
 • Implementação da leitura de informações dos produtos | Parte 1
 • Implementação do cadastro de produtos | Parte 2
