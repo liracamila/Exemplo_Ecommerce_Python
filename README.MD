@@ -1,4 +1,4 @@
-## Exemplo de E-commerce em Python
+## Exemplos de E-commerce em Python e em Java.
 
 ### Exercicio para o curso de Lógica de Programação
 
