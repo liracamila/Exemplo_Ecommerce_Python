@@ -1,3 +1,4 @@
+package Projeto_Java;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -72,47 +73,47 @@ class CadastroDeProduto {
 
 public class Main{
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
-        CadastroDeProduto cadastroDeProduto = new CadastroDeProduto();
-        while(true){
-            System.out.println("Escolha uma opção:");
-            System.out.println("1- Cadastrar produto");
-            System.out.println("2- Vizualizar produtos");
-            System.out.println("3- Filtrar produtos por preço");
-            System.out.println("0- Sair.");
+        try (Scanner scanner = new Scanner(System.in)) {
+            CadastroDeProduto cadastroDeProduto = new CadastroDeProduto();
+            while(true){
+                System.out.println("Escolha uma opção:");
+                System.out.println("1- Cadastrar produto");
+                System.out.println("2- Visualizar produtos");
+                System.out.println("3- Filtrar produtos por preço");
+                System.out.println("0- Sair.");
 
-            int opcao = scanner.nextInt();
+                int opcao = scanner.nextInt();
 
-            switch (opcao) {
-                case 1:
-                    System.out.println("Digite o nome do produto: ");
-                    String nome = scanner.next();
-                    System.out.println("Digite o preço do produto: R$ ");
-                    double preço = scanner.nextDouble();
-                    System.out.println("Digite a quantidade: ");
-                    int quantidade = scanner.nextInt();
-                    Produto produto = new Produto(nome, preço, quantidade);
-                    cadastroDeProduto.CadastrarProduto(produto);
-                    break;
+                switch (opcao) {
+                    case 1:
+                        System.out.println("Digite o nome do produto: ");
+                        String nome = scanner.next();
+                        System.out.println("Digite o preço do produto: R$ ");
+                        double preço = scanner.nextDouble();
+                        System.out.println("Digite a quantidade: ");
+                        int quantidade = scanner.nextInt();
+                        Produto produto = new Produto(nome, preço, quantidade);
+                        cadastroDeProduto.CadastrarProduto(produto);
+                        break;
 
-                case 2:
-                    cadastroDeProduto.VisualizarProdutos();
-                    break;
+                    case 2:
+                        cadastroDeProduto.VisualizarProdutos();
+                        break;
 
-                case 3:
-                    System.out.println("Digite o preço minimo: R$ ");
-                    double precoMin = scanner.nextDouble();
-                    System.out.println("Digite o preço maximo: R$ ");
-                    double precoMax = scanner.nextDouble();
-                    cadastroDeProduto.filtrarPreco(precoMin, precoMax);
-                    break;
+                    case 3:
+                        System.out.println("Digite o preço mínimo: R$ ");
+                        double precoMin = scanner.nextDouble();
+                        System.out.println("Digite o preço máximo: R$ ");
+                        double precoMax = scanner.nextDouble();
+                        cadastroDeProduto.filtrarPreco(precoMin, precoMax);
+                        break;
 
-                case 0:
-                    System.out.println("Encerrando o programa.");
-                    System.exit(0);
-                    break;
+                    case 0:
+                        System.out.println("Encerrando o programa.");
+                        return; // Não é necessário chamar System.exit(0)
+                }
             }
         }
-
     }
+
 }
